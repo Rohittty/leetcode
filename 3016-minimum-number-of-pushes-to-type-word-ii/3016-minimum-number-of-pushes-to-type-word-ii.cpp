@@ -11,6 +11,9 @@ public:
         int j=0;
         int m=1;
         for(int i=25;i>=0;i--){
+            if(freq[i]==0){
+              break;
+            }
           sum=sum+m*freq[i];
             j++;
             if(j==8){
