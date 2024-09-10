@@ -20,29 +20,28 @@ public:
 
 class Solution {
 public:
-      void levelOrder(Node* root,vector<vector<int>>& ans) {
+      void levelOrder(Node* root,int &count) {
        queue<Node*>q;
         q.push(root);
         while(!q.empty()){
-            vector<int>os;
             int size=q.size();
             while(size--){
       Node*curr=q.front();
                 q.pop();
-            os.push_back(curr->val);
+            
                 for(auto itr:curr->children){
                     q.push(itr);
             }
           }
-   ans.push_back(os);
+   count++;
         }
     }
     int maxDepth(Node* root) {
         if(root==NULL){
       return 0;
 }
-        vector<vector<int>>ans;
-        levelOrder(root,ans);
-        return ans.size();
+        int count=0;
+        levelOrder(root,count);
+        return count;
     }
 };
