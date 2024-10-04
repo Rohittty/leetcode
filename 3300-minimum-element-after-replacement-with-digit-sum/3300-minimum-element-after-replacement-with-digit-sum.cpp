@@ -13,6 +13,7 @@ public:
         int mini=INT_MAX;
         for(auto num:nums){
          int sum=digitsum(num);
+            
             mini=min(mini,sum);
         }
         return mini;
