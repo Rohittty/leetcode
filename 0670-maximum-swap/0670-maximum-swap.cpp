@@ -25,17 +25,17 @@ public:
                 break;
             }
         }
-        vector<int>l;
+        int op=0;
         if(k==0)return g;
         for(int i=0;i<ans.size();i++){
               if(idx<i&&ans[i]-'0'==k){
-                  l.push_back(i);
+                  op=max(op,i);
                  
               }
         }
-        int op=0;
+    
         
-        for(int i=0;i<l.size();i++)op=max(op,l[i]);
+    
         swap(ans[idx],ans[op]);
         int r=stoi(ans);
         
